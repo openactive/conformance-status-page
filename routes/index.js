@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', async function(req, res, next) {
 
-  const statusUrl = "http://localhost:8000/publishers/status";
+  const statusUrl = process.env.STATUS_DATA_URL || "http://localhost:8000/publishers/status";
   let statusData = {};
   let error = undefined;
 
