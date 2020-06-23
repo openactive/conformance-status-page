@@ -9,4 +9,15 @@ Using `node` version `13.9`. Project uses standard `express-generator` conventio
 
 # Run the app (developer)
 
-`$ npm start-dev `
+`$ npm run start-dev `
+
+# Run the app (production)
+
+`$ npm run start`
+
+# Configuration
+
+## Environment variables
+
+* `STATUS_DATA_URL` the end point which is fetched to get the status data
+*  `PORT` the web server port
