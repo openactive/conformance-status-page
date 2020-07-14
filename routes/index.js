@@ -12,7 +12,7 @@ router.get('/', async function(req, res, next) {
 
   hbs.registerHelper('licenseSnippet', function (license) {
     /* Add more licenses here when needed  */
-    if (license.indexOf("https://creativecommons.org/licenses/by/4.0/") != -1){
+    if (license.indexOf("https://creativecommons.org/licenses/by/4.0") != -1){
       const template = hbs.compile('<a href="{{license}}"><img src="images/by.png" alt="CC BY 4.0" style="height: 15px" /><br />CC BY 4.0</a>');
       return template({license : license});
     }
