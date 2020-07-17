@@ -11,14 +11,26 @@
   <table class="table table-hover datasets-table">
     <thead>
     <tr>
+      <th></th>
       <th scope="col">Name</th>
+      <th scope="col">Feeds</th>
       <th scope="col">License</th>
     </tr>
     </thead>
     <tbody>
     {{#each statusData.publishers}}
       <tr>
-        <td><a href="{{url}}">{{name}}</a></td>
+        <td>
+          {{#if logoUrl}}
+          <img src="{{logoUrl}}" class="d-block" alt="{{name}}" style="max-width: 100px; max-height: 100px;" />
+          {{/if}}
+        </td>
+        <td>
+          <a href="{{url}}">{{name}}</a>
+        </td>
+        <td>
+          {{feedCount}}
+        </td>
         <td>{{#licenseSnippet license }}{{/licenseSnippet}}</td>
       </tr>
     {{/each}}
