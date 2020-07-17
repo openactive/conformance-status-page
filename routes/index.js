@@ -32,6 +32,7 @@ router.get('/', async function(req, res, next) {
 
   res.render('index', {
     statusData: statusData,
+    statusUrl, statusUrl,
     error: error,
    });
 });
