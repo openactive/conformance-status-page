@@ -11,8 +11,9 @@
   <table class="table table-hover datasets-table">
     <thead>
     <tr>
-      <th></th>
+      <th scope="col"></th>
       <th scope="col">Name</th>
+      <th scope="col">Validation</th>
       <th scope="col">Feeds</th>
       <th scope="col">License</th>
     </tr>
@@ -29,9 +30,15 @@
           <a href="{{url}}">{{name}}</a>
         </td>
         <td>
+          <a href="#" data-cs-publisher-id="{{csPublisherId}}">placeholder</a>
+        </td>
+        <td>
           {{feedCount}}
         </td>
         <td>{{#licenseSnippet license }}{{/licenseSnippet}}</td>
+      </tr>
+      <tr style="display:none" data-cs-publisher-id="{{csPublisherId}}">
+        <td colspan="5"></td>
       </tr>
     {{/each}}
     </tbody>
@@ -39,8 +46,8 @@
   <p><a class="btn btn-secondary" href="{{statusUrl}}">Download as JSON</a></p>
 </section>
 
-{{#if error}}
 <script>
+{{#if error}}
   console.warn("Status source fetch: {{error}}");
-</script>
 {{/if}}
+</script>
