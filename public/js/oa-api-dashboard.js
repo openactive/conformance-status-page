@@ -36,18 +36,27 @@ $(function() {
     }
   });
 
-  $('.summary-modals div.modal').each(function(){
-    $(this).on('show.bs.modal ', function (e) {
-      var url = '/summary/' + $(this).attr('data-dataset-key');
-      var bodyElement = $(this).find('div.modal-body');
-      var isEmpty = true;
-      isEmpty = ($(bodyElement).children()[0].className != 'container');
-      if (isEmpty){
-        $.ajax({ url: url, method: 'GET', 
-          success: function(body){ bodyElement.html(body); }
-        });  
-      }
-    });
+  /* Publisher details */
+  $("a[data-cs-publisher-id]").click(function(e){
+    e.preventDefault();
+
+    let csPublisherId = $(this).data("cs-publisher-id");
+
+    if (!csPublisherId){
+      return;
+    }
+
+    let tr = $("tr[data-cs-publisher-id="+csPublisherId+"]");
+    let td = tr.children("td").first();
+
+    /* If we don't have the details already in the dom fetch them */
+    if (td.html().length == 0){
+      $.get("/details_snippet/publisher/" + csPublisherId, function(data){
+        td.html(data);
+      })
+    }
+
+    tr.toggle();
   });
 
 });

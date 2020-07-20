@@ -19,5 +19,5 @@ Using `node` version `13.9`. Project uses standard `express-generator` conventio
 
 ## Environment variables
 
-* `STATUS_DATA_URL` the end point which is fetched to get the status data
+* `CONFORMANCE_SERVER_URL` the url to the root of the [conformance services](https://github.com/openactive/conformance-services) server
 *  `PORT` the web server port
