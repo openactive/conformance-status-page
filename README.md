@@ -27,7 +27,7 @@ Using `node` version `13.9`. Project uses standard `express-generator` conventio
 
 ## Initial Setup
 
-Create a new app.
+Create a new app in the "Europe" region.
 
 Go to "Settings" and "Reveal Config Vars".
 
