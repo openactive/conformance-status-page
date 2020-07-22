@@ -51,6 +51,7 @@ $(function() {
 
     /* If we don't have the details already in the dom fetch them */
     if (td.html().length == 0){
+      td.text("Loading…");
       $.get("/details_snippet/publisher/" + csPublisherId, function(data){
         td.html(data);
       })
