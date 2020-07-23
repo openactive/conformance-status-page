@@ -19,7 +19,7 @@ Using `node` version `13.9`. Project uses standard `express-generator` conventio
 
 ## Environment variables
 
-* `CONFORMANCE_SERVER_URL` the url to the root of the [conformance services](https://github.com/openactive/conformance-services) server
+* `CONFORMANCE_SERVER_URL` the url to the root of the [conformance services](https://github.com/openactive/conformance-services) server. For example " https://conformance-services.herokuapp.com". Note **no trailing slash** on the URL.
 *  `PORT` the web server port
 
 
@@ -31,7 +31,7 @@ Create a new app in the "Europe" region.
 
 Go to "Settings" and "Reveal Config Vars".
 
-Add a Config var named `CONFORMANCE_SERVER_URL`. This should be the root URL of the conformance services app (eg `https://conformance-services-test.herokuapp.com`)
+Add a Config var and value named `CONFORMANCE_SERVER_URL` for the corresponding Environment variable.
 
 Do a deploy. If you link your GitHub account you can press a button in the web interface to do this, or you set up the heroku CLI tool. 
 Either is fine.
