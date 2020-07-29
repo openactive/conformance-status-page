@@ -9,7 +9,7 @@ $(function() {
     // widget code contained in the jquery.tablesorter.widgets.js file
     // use the zebra stripe widget if you plan on hiding any rows (filter widget)
     // the uitheme widget is NOT REQUIRED!
-    widgets : [ "filter", "columns", "zebra" ],
+    widgets : [ "filter", "columns", "zebra" , "group" ],
 
     widgetOptions : {
       // using the default zebra striping class name, so it actually isn't included in the theme variable above
@@ -31,9 +31,10 @@ $(function() {
         'form-control',
         'form-control',
         'form-control'
-      ]
+      ],
 
-    }
+      filter_childRows: true,
+    },
   });
 
   /* Publisher details */
