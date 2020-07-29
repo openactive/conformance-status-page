@@ -13,7 +13,6 @@
     <tr>
       <th scope="col"></th>
       <th scope="col">Name</th>
-      <th scope="col">Validation</th>
       <th scope="col">Feeds</th>
       <th scope="col">License</th>
     </tr>
@@ -27,17 +26,15 @@
           {{/if}}
         </td>
         <td>
+          <a name="{{csPublisherId}}"></a>
           <a href="{{url}}">{{name}}</a>
         </td>
         <td>
-          <a href="#" data-cs-publisher-id="{{csPublisherId}}">placeholder</a>
-        </td>
-        <td>
-          {{feedCount}}
+          <a href="#{{csPublisherId}}" data-cs-publisher-id="{{csPublisherId}}">{{feedCount}}</a>
         </td>
         <td>{{#licenseSnippet license }}{{/licenseSnippet}}</td>
       </tr>
-      <tr style="display:none" data-cs-publisher-id="{{csPublisherId}}">
+      <tr style="display:none" class="tablesorter-childRow" data-cs-publisher-id="{{csPublisherId}}">
         <td colspan="5"></td>
       </tr>
     {{/each}}
