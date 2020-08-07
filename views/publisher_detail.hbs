@@ -3,26 +3,32 @@
     <tr>
       <th scope="col">Feed</th>
       <th scope="col">Data items passing validation (%)</th>
-      <th scope="col"></th>
+      <th scope="col">Validation errors</th>
+      <th scope="col">Normalised data profile score (lower better)</th>
     </tr>
   </thead>
   <tbody>
     {{#each publisherDetails.feeds}}
     <tr>
       <td>
-        <a href="{{url}}">{{name}}</a>
+        <a href="{{url}}">{{name}}</a> <small>{{csFeedId}}</small>
       </td>
       <td>
-        {{#if validationDonePercent }}
-        <span title="{{validationDonePercent}}% of items assessed">{{validPercent}}</span>
+        {{#if stats.percentValidationDone }}
+        <span title="{{stats.percentValidationDone}}% of items assessed">{{stats.percentValidationPass}}</span>
         {{else}}
         Validation not yet started
         {{/if}}
       </td>
       <td>
-        {{#if validationDonePercent }}
+        {{#if stats.percentValidationDone }}
         <a href="{{../publisherDetailsUrl}}/feed/{{csFeedId}}/errors">{{name}} Validation Results (JSON)</a>
         {{/if}}
+      </td>
+      <td>
+       {{#each stats.profileStats}}
+         {{dataProfileName}}:{{score}} <br />
+       {{/each}}
       </td>
     </tr>
     {{/each}}
