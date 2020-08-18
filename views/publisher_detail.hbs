@@ -4,14 +4,20 @@
       <th scope="col">Feed</th>
       <th scope="col">Data items passing validation (%)</th>
       <th scope="col">Validation errors</th>
-      <th scope="col">Normalised data profile score (lower better)</th>
+      <th scope="col" title="Total errors / data items">Normalised data profile score (lower better)</th>
     </tr>
   </thead>
   <tbody>
     {{#each publisherDetails.feeds}}
-    <tr>
+    <tr data-cs-feed-id="{{csFeedId}}">
       <td>
-        <a href="{{url}}">{{name}}</a> <small>{{csFeedId}}</small>
+        <a href="{{url}}">
+        {{#if name}}
+          {{name}}
+        {{else}}
+          Unnamed
+        {{/if}}
+        </a>
       </td>
       <td>
         {{#if stats.percentValidationDone }}
@@ -27,7 +33,7 @@
       </td>
       <td>
        {{#each stats.profileStats}}
-         {{dataProfileName}}:{{score}} <br />
+         {{dataProfileName}}: {{score}} <br />
        {{/each}}
       </td>
     </tr>
