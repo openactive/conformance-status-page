@@ -74,8 +74,6 @@ router.get('/help', async function(req, res, next){
   res.send("HELP");
 
 
-
-
 });
 
 export default router;
