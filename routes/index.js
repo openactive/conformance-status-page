@@ -69,4 +69,11 @@ router.get('/details_snippet/publisher/:publisherId', async function(req, res, n
 
 });
 
+router.get('/help', async function(req, res, next){
+  let error = undefined;
+  res.render('help');
+
+
+});
+
 export default router;
